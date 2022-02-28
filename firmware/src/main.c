@@ -26,8 +26,10 @@
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include <stdio.h>
-#include "definitions.h"                // SYS function prototypes
 #include <math.h>
+#include "definitions.h"                // SYS function prototypes
+#include "ringbuffer.h"
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -35,7 +37,11 @@
 // *****************************************************************************
 // *****************************************************************************
 #define DRV_I2S_DATA DRV_I2S_DATA16
-#define AUDIO_BUFFER_NUM_SAMPLES 512
+#define CODEC_BUFFER_NUM_SAMPLES    512    // Fix chunk size at 32ms
+#define AUDIO_BUFFER_NUM_BLOCKS     2
+#define AUDIO_BUFFER_NUM_SAMPLES    (CODEC_BUFFER_NUM_SAMPLES*AUDIO_BUFFER_NUM_BLOCKS)
+
+typedef int16_t snsr_data_t;
 
 typedef enum APP_STATE {
     INIT=0,
@@ -44,10 +50,13 @@ typedef enum APP_STATE {
     FATAL
 } state_t;
 
+static DRV_I2S_DATA _codecBuffer[AUDIO_BUFFER_NUM_SAMPLES] __attribute__ ((aligned (32)));
+static snsr_data_t _micBuffer_data[AUDIO_BUFFER_NUM_SAMPLES];
+static ringbuffer_t micBuffer;
+static DRV_HANDLE drvHandle;
 
-DRV_I2S_DATA codecBuffer[2][AUDIO_BUFFER_NUM_SAMPLES] __attribute__ ((aligned (32)));
-
-volatile state_t appState = INIT;
+volatile state_t appState;
+static volatile bool micBuffer_overrun;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -55,13 +64,31 @@ volatile state_t appState = INIT;
 // *****************************************************************************
 // *****************************************************************************
 void AudioHandler(DRV_CODEC_BUFFER_EVENT event,
-    DRV_CODEC_BUFFER_HANDLE handle, uintptr_t context)
+    DRV_CODEC_BUFFER_HANDLE bufferHandle, uintptr_t context)
 {
     switch(event)
     {
         case DRV_CODEC_BUFFER_EVENT_COMPLETE:
         {
-            appState = READY; 
+            ringbuffer_size_t wrcnt;
+            snsr_data_t *ptr = ringbuffer_get_write_buffer(&micBuffer, &wrcnt);
+            
+            if (wrcnt < CODEC_BUFFER_NUM_SAMPLES) {
+                micBuffer_overrun = true;
+            }
+            else {         
+                for (size_t i=0; i < CODEC_BUFFER_NUM_SAMPLES; i++) {
+                    *ptr++ = (snsr_data_t) _codecBuffer[i].rightData;
+                }
+                ringbuffer_advance_write_index(&micBuffer, CODEC_BUFFER_NUM_SAMPLES);
+            }
+            
+            DRV_CODEC_BufferAddRead(drvHandle, &bufferHandle, _codecBuffer, sizeof(_codecBuffer));
+            if(bufferHandle == DRV_CODEC_BUFFER_HANDLE_INVALID) {
+                break;
+            }
+            
+            appState = READY;
         }        
         break;
 
@@ -88,19 +115,15 @@ void AudioHandler(DRV_CODEC_BUFFER_EVENT event,
 
 int main ( void )
 {
-    uint8_t cBufferIndex = 0;
     SYS_MODULE_OBJ sysHandle;
-    DRV_HANDLE drvHandle;
-    DRV_CODEC_BUFFER_HANDLE bufferHandle;
+    SYS_STATUS status;
     
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     
     sysHandle = sysObj.drvwm8904Codec0;
     drvHandle = DRV_HANDLE_INVALID;
-    
     appState = INIT;
-    SYS_STATUS status;
     
     float dbmeter = 0;
     while ( appState != FATAL )
@@ -110,6 +133,16 @@ int main ( void )
         switch (appState) {
             case INIT:
             {
+                if (ringbuffer_init(&micBuffer,
+                        _micBuffer_data,
+                        sizeof(_micBuffer_data) / sizeof(_micBuffer_data[0]),
+                        sizeof(_micBuffer_data[0])))
+                {
+                    appState = FATAL;
+                    break;
+                }
+                micBuffer_overrun = false;
+                        
                 // Wait for resource
                 status = DRV_CODEC_Status(sysHandle);
                 if (status != SYS_STATUS_READY) {
@@ -122,7 +155,13 @@ int main ( void )
                 {
                     DRV_CODEC_BufferEventHandlerSet(drvHandle, 
                         (DRV_CODEC_BUFFER_EVENT_HANDLER) AudioHandler, 
-                        0);  
+                        0);                    
+                    
+                    DRV_CODEC_BUFFER_HANDLE bufferHandle;
+                    DRV_CODEC_BufferAddRead(drvHandle, &bufferHandle, _codecBuffer, sizeof(_codecBuffer));
+                    if(bufferHandle == DRV_CODEC_BUFFER_HANDLE_INVALID) {
+                        break;
+                    }
                     appState = READY;
                 }
             }
@@ -130,23 +169,20 @@ int main ( void )
                 
             case READY:
             {
-                appState = READING;
-                
-                // Set up new transfer and swap consumer-producer buffers
-                DRV_CODEC_BufferAddRead(drvHandle, &bufferHandle, codecBuffer[cBufferIndex], sizeof(codecBuffer[0]));
-                if(bufferHandle == DRV_CODEC_BUFFER_HANDLE_INVALID) {
+                ringbuffer_size_t rdcnt;
+                snsr_data_t const *ptr = ringbuffer_get_read_buffer(&micBuffer, &rdcnt);
+                if (rdcnt < AUDIO_BUFFER_NUM_SAMPLES) {
                     continue;
                 }
-                cBufferIndex ^= 1;
-                
-                DRV_I2S_DATA *ptr = codecBuffer[cBufferIndex];
 
                 // sqrt(1/n * sum(x^2))
                 float db = 0;
                 for (size_t i=0; i < AUDIO_BUFFER_NUM_SAMPLES; i++) {
-                    float x = (float) ptr[i].rightData / 32768;
+                    float x = (float) ptr[i] / 32768;
                     db += x*x;
                 }
+                
+                ringbuffer_advance_read_index(&micBuffer, AUDIO_BUFFER_NUM_SAMPLES);
                 
                 db /= AUDIO_BUFFER_NUM_SAMPLES;
                 db = 10 * log10(db + 1e-9);
