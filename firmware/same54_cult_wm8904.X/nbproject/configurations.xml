@@ -115,6 +115,510 @@
           <itemPath>../src/config/default/configuration.h</itemPath>
         </logicalFolder>
       </logicalFolder>
+      <logicalFolder name="edge-impulse-sdk"
+                     displayName="edge-impulse-sdk"
+                     projectFiles="true">
+        <logicalFolder name="anomaly" displayName="anomaly" projectFiles="true">
+          <itemPath>../edge-impulse-sdk/anomaly/anomaly.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="classifier" displayName="classifier" projectFiles="true">
+          <itemPath>../edge-impulse-sdk/classifier/ei_aligned_malloc.h</itemPath>
+          <itemPath>../edge-impulse-sdk/classifier/ei_classifier_config.h</itemPath>
+          <itemPath>../edge-impulse-sdk/classifier/ei_classifier_smooth.h</itemPath>
+          <itemPath>../edge-impulse-sdk/classifier/ei_classifier_types.h</itemPath>
+          <itemPath>../edge-impulse-sdk/classifier/ei_model_types.h</itemPath>
+          <itemPath>../edge-impulse-sdk/classifier/ei_run_classifier.h</itemPath>
+          <itemPath>../edge-impulse-sdk/classifier/ei_run_classifier_image.h</itemPath>
+          <itemPath>../edge-impulse-sdk/classifier/ei_run_dsp.h</itemPath>
+          <itemPath>../edge-impulse-sdk/classifier/ei_signal_with_axes.h</itemPath>
+          <itemPath>../edge-impulse-sdk/classifier/ei_signal_with_range.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="cmake" displayName="cmake" projectFiles="true">
+          <logicalFolder name="zephyr" displayName="zephyr" projectFiles="true">
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="CMSIS" displayName="CMSIS" projectFiles="true">
+          <logicalFolder name="Core" displayName="Core" projectFiles="true">
+            <logicalFolder name="Include" displayName="Include" projectFiles="true">
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/cmsis_version.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_armv81mml.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_armv8mbl.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_armv8mml.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm0.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm0plus.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm1.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm23.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm3.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm33.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm35p.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm4.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm55.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_cm7.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_sc000.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/core_sc300.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/mpu_armv8.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/pmu_armv8.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/Core/Include/tz_context.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="DSP" displayName="DSP" projectFiles="true">
+            <logicalFolder name="Include" displayName="Include" projectFiles="true">
+              <logicalFolder name="dsp" displayName="dsp" projectFiles="true">
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/basic_math_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/basic_math_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/bayes_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/bayes_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/complex_math_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/complex_math_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/controller_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/controller_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/distance_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/distance_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/fast_math_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/fast_math_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/filtering_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/filtering_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/interpolation_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/interpolation_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/matrix_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/matrix_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/none.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/quaternion_math_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/statistics_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/statistics_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/support_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/support_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/svm_defines.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/svm_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/svm_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/transform_functions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/transform_functions_f16.h</itemPath>
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/dsp/utils.h</itemPath>
+              </logicalFolder>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_common_tables.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_common_tables_f16.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_const_structs.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_const_structs_f16.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_helium_utils.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_math.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_math_f16.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_math_memory.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_math_types.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_math_types_f16.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_mve_tables.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_mve_tables_f16.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_sorting.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_vec_fft.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_vec_filtering.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_vec_math.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/DSP/Include/arm_vec_math_f16.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="PrivateInclude"
+                           displayName="PrivateInclude"
+                           projectFiles="true">
+            </logicalFolder>
+            <logicalFolder name="Source" displayName="Source" projectFiles="true">
+              <logicalFolder name="BasicMathFunctions"
+                             displayName="BasicMathFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="BayesFunctions"
+                             displayName="BayesFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="CommonTables"
+                             displayName="CommonTables"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="ComplexMathFunctions"
+                             displayName="ComplexMathFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="ControllerFunctions"
+                             displayName="ControllerFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="DistanceFunctions"
+                             displayName="DistanceFunctions"
+                             projectFiles="true">
+                <itemPath>../edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="FastMathFunctions"
+                             displayName="FastMathFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="FilteringFunctions"
+                             displayName="FilteringFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="InterpolationFunctions"
+                             displayName="InterpolationFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="MatrixFunctions"
+                             displayName="MatrixFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="QuaternionMathFunctions"
+                             displayName="QuaternionMathFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="StatisticsFunctions"
+                             displayName="StatisticsFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="SupportFunctions"
+                             displayName="SupportFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="SVMFunctions"
+                             displayName="SVMFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="TransformFunctions"
+                             displayName="TransformFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="NN" displayName="NN" projectFiles="true">
+            <logicalFolder name="Include" displayName="Include" projectFiles="true">
+              <itemPath>../edge-impulse-sdk/CMSIS/NN/Include/arm_nnfunctions.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/NN/Include/arm_nnsupportfunctions.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/NN/Include/arm_nn_tables.h</itemPath>
+              <itemPath>../edge-impulse-sdk/CMSIS/NN/Include/arm_nn_types.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Source" displayName="Source" projectFiles="true">
+              <logicalFolder name="ActivationFunctions"
+                             displayName="ActivationFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="BasicMathFunctions"
+                             displayName="BasicMathFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="ConcatenationFunctions"
+                             displayName="ConcatenationFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="ConvolutionFunctions"
+                             displayName="ConvolutionFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="FullyConnectedFunctions"
+                             displayName="FullyConnectedFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="NNSupportFunctions"
+                             displayName="NNSupportFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="PoolingFunctions"
+                             displayName="PoolingFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="ReshapeFunctions"
+                             displayName="ReshapeFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="SoftmaxFunctions"
+                             displayName="SoftmaxFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+              <logicalFolder name="SVDFunctions"
+                             displayName="SVDFunctions"
+                             projectFiles="true">
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="dsp" displayName="dsp" projectFiles="true">
+          <logicalFolder name="dct" displayName="dct" projectFiles="true">
+            <itemPath>../edge-impulse-sdk/dsp/dct/fast-dct-fft.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="image" displayName="image" projectFiles="true">
+            <itemPath>../edge-impulse-sdk/dsp/image/image.hpp</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/image/processing.hpp</itemPath>
+          </logicalFolder>
+          <logicalFolder name="kissfft" displayName="kissfft" projectFiles="true">
+            <itemPath>../edge-impulse-sdk/dsp/kissfft/kissfft.h</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/kissfft/kiss_fft.h</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/kissfft/kiss_fftr.h</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/kissfft/_kiss_fft_guts.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="spectral" displayName="spectral" projectFiles="true">
+            <itemPath>../edge-impulse-sdk/dsp/spectral/feature.hpp</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/spectral/filters.hpp</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/spectral/fir_filter.hpp</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/spectral/processing.hpp</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/spectral/spectral.hpp</itemPath>
+          </logicalFolder>
+          <logicalFolder name="speechpy" displayName="speechpy" projectFiles="true">
+            <itemPath>../edge-impulse-sdk/dsp/speechpy/feature.hpp</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/speechpy/functions.hpp</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/speechpy/processing.hpp</itemPath>
+            <itemPath>../edge-impulse-sdk/dsp/speechpy/speechpy.hpp</itemPath>
+          </logicalFolder>
+          <itemPath>../edge-impulse-sdk/dsp/config.hpp</itemPath>
+          <itemPath>../edge-impulse-sdk/dsp/ei_profiler.h</itemPath>
+          <itemPath>../edge-impulse-sdk/dsp/ei_utils.h</itemPath>
+          <itemPath>../edge-impulse-sdk/dsp/memory.hpp</itemPath>
+          <itemPath>../edge-impulse-sdk/dsp/numpy.hpp</itemPath>
+          <itemPath>../edge-impulse-sdk/dsp/numpy_types.h</itemPath>
+          <itemPath>../edge-impulse-sdk/dsp/returntypes.hpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="porting" displayName="porting" projectFiles="true">
+          <logicalFolder name="arduino" displayName="arduino" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="ecm3532" displayName="ecm3532" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="himax" displayName="himax" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="lib" displayName="lib" projectFiles="true">
+            <itemPath>../edge-impulse-sdk/porting/lib/at_base64_lib.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="mbed" displayName="mbed" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="mingw32" displayName="mingw32" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="posix" displayName="posix" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="raspberry" displayName="raspberry" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="silabs" displayName="silabs" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="sony" displayName="sony" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="stm32-cubeai"
+                         displayName="stm32-cubeai"
+                         projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="ti" displayName="ti" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="zephyr" displayName="zephyr" projectFiles="true">
+          </logicalFolder>
+          <itemPath>../edge-impulse-sdk/porting/ei_classifier_porting.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="scripts" displayName="scripts" projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="tensorflow" displayName="tensorflow" projectFiles="true">
+          <logicalFolder name="lite" displayName="lite" projectFiles="true">
+            <logicalFolder name="c" displayName="c" projectFiles="true">
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/c/builtin_op_data.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/c/common.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/c/c_api_types.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="core" displayName="core" projectFiles="true">
+              <logicalFolder name="api" displayName="api" projectFiles="true">
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/core/api/error_reporter.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/core/api/flatbuffer_conversions.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/core/api/op_resolver.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/core/api/tensor_utils.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="kernels" displayName="kernels" projectFiles="true">
+              <logicalFolder name="internal" displayName="internal" projectFiles="true">
+                <logicalFolder name="optimized" displayName="optimized" projectFiles="true">
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/optimized/neon_check.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="reference" displayName="reference" projectFiles="true">
+                  <logicalFolder name="integer_ops" displayName="integer_ops" projectFiles="true">
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/add.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/conv.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/depthwise_conv.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/fully_connected.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/l2normalization.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/logistic.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/mean.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/mul.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/pooling.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/tanh.h</itemPath>
+                    <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/transpose_conv.h</itemPath>
+                  </logicalFolder>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/add.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/add_n.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/arg_min_max.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/batch_to_space_nd.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/binary_function.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/ceil.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/comparisons.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/concatenation.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/conv.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/depthwiseconv_float.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/depthwiseconv_uint8.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/dequantize.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/div.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/elu.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/exp.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/fill.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/floor.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/fully_connected.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/hard_swish.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/l2normalization.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/leaky_relu.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/logistic.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/maximum_minimum.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/mul.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/neg.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/pad.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/pooling.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/prelu.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/process_broadcast_shapes.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/quantize.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/reduce.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/requantize.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/resize_nearest_neighbor.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/round.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/softmax.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/space_to_batch_nd.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/strided_slice.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/sub.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/tanh.h</itemPath>
+                  <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/transpose_conv.h</itemPath>
+                </logicalFolder>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/common.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/compatibility.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/cppmath.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/max.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/min.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/portable_tensor.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/quantization_util.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/strided_slice_logic.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/tensor_ctypes.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/internal/types.h</itemPath>
+              </logicalFolder>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/kernel_util.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/op_macros.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/kernels/padding.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="micro" displayName="micro" projectFiles="true">
+              <logicalFolder name="kernels" displayName="kernels" projectFiles="true">
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/activation_utils.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/circular_buffer_flexbuffers_generated_data.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/conv.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/conv_test.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/depthwise_conv.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/detection_postprocess_flexbuffers_generated_data.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/ethosu.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/fully_connected.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/kernel_runner.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/kernel_util.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/micro_ops.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/micro_utils.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/mli_slicers.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/mli_tf_utils.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/quantize.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/scratch_buffers.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/scratch_buf_mgr.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/softmax.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/kernels/svdf.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="memory_planner"
+                             displayName="memory_planner"
+                             projectFiles="true">
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/memory_planner/greedy_memory_planner.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/memory_planner/linear_memory_planner.h</itemPath>
+                <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/memory_planner/memory_planner.h</itemPath>
+              </logicalFolder>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/all_ops_resolver.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/compatibility.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/debug_log.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/memory_helpers.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/micro_allocator.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/micro_error_reporter.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/micro_interpreter.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/micro_mutable_op_resolver.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/micro_op_resolver.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/micro_profiler.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/micro_string.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/micro_time.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/micro_utils.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/recording_micro_allocator.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/recording_micro_interpreter.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/recording_simple_memory_allocator.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/simple_memory_allocator.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/system_setup.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/micro/test_helpers.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="schema" displayName="schema" projectFiles="true">
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/schema/schema_generated.h</itemPath>
+              <itemPath>../edge-impulse-sdk/tensorflow/lite/schema/schema_utils.h</itemPath>
+            </logicalFolder>
+            <itemPath>../edge-impulse-sdk/tensorflow/lite/portable_type_to_tflitetype.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="third_party" displayName="third_party" projectFiles="true">
+          <logicalFolder name="arc_mli_package"
+                         displayName="arc_mli_package"
+                         projectFiles="true">
+            <logicalFolder name="bin" displayName="bin" projectFiles="true">
+              <logicalFolder name="emsdp_em11d_em9d_dfss"
+                             displayName="emsdp_em11d_em9d_dfss"
+                             projectFiles="true">
+                <logicalFolder name="release" displayName="release" projectFiles="true">
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="include" displayName="include" projectFiles="true">
+              <logicalFolder name="api" displayName="api" projectFiles="true">
+                <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_helpers_api.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_kernels_api.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_krn_avepool_spec_api.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_krn_conv2d_spec_api.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_krn_depthwise_conv2d_spec_api.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_krn_maxpool_spec_api.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_mov_api.h</itemPath>
+              </logicalFolder>
+              <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/mli_api.h</itemPath>
+              <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/mli_config.h</itemPath>
+              <itemPath>../edge-impulse-sdk/third_party/arc_mli_package/include/mli_types.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="flatbuffers" displayName="flatbuffers" projectFiles="true">
+            <logicalFolder name="include" displayName="include" projectFiles="true">
+              <logicalFolder name="flatbuffers" displayName="flatbuffers" projectFiles="true">
+                <itemPath>../edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/base.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/flatbuffers.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/flexbuffers.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/stl_emulation.h</itemPath>
+                <itemPath>../edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/util.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="gemmlowp" displayName="gemmlowp" projectFiles="true">
+            <logicalFolder name="fixedpoint" displayName="fixedpoint" projectFiles="true">
+              <itemPath>../edge-impulse-sdk/third_party/gemmlowp/fixedpoint/fixedpoint.h</itemPath>
+              <itemPath>../edge-impulse-sdk/third_party/gemmlowp/fixedpoint/fixedpoint_neon.h</itemPath>
+              <itemPath>../edge-impulse-sdk/third_party/gemmlowp/fixedpoint/fixedpoint_sse.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="internal" displayName="internal" projectFiles="true">
+              <itemPath>../edge-impulse-sdk/third_party/gemmlowp/internal/detect_platform.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ruy" displayName="ruy" projectFiles="true">
+            <logicalFolder name="ruy" displayName="ruy" projectFiles="true">
+              <logicalFolder name="profiler" displayName="profiler" projectFiles="true">
+                <itemPath>../edge-impulse-sdk/third_party/ruy/ruy/profiler/instrumentation.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="model-parameters"
+                     displayName="model-parameters"
+                     projectFiles="true">
+        <itemPath>../model-parameters/dsp_blocks.h</itemPath>
+        <itemPath>../model-parameters/model_metadata.h</itemPath>
+        <itemPath>../model-parameters/model_variables.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME54P20A_DFP" projectFiles="true">
           <logicalFolder name="f1" displayName="component" projectFiles="true">
@@ -245,6 +749,11 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
+      <logicalFolder name="tflite-model"
+                     displayName="tflite-model"
+                     projectFiles="true">
+        <itemPath>../tflite-model/trained_model_compiled.h</itemPath>
+      </logicalFolder>
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/ringbuffer.h</itemPath>
       <itemPath>../src/app_config.h</itemPath>
@@ -350,9 +859,10 @@
           <itemPath>../src/config/default/tasks.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/ringbuffer.c</itemPath>
+      <itemPath>../src/ei_classifier_porting.cpp</itemPath>
+      <itemPath>../src/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -385,6 +895,9 @@
   <sourceRootList>
     <Elem>../src</Elem>
     <Elem>../../../../scratch/wm8904_scratch/pt3/firmware/src</Elem>
+    <Elem>../model-parameters</Elem>
+    <Elem>../tflite-model</Elem>
+    <Elem>../edge-impulse-sdk</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -394,7 +907,7 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
@@ -408,13 +921,14 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibFileItem>../libedgeimpulse.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
         </archiverTool>
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
-          <parseOnProdLoad>false</parseOnProdLoad>
+          <parseOnProdLoad>true</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
         <subordinates>
@@ -529,7 +1043,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="512"/>
+        <property key="heap-size" value="65536"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>
@@ -580,7 +1094,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
-        <property key="common-include-directories" value=""/>
+        <property key="common-include-directories" value="../"/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
         <property key="mdtcm" value=""/>

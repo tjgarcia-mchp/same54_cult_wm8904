@@ -36,15 +36,20 @@
 // Section: User config parameters
 // *****************************************************************************
 // *****************************************************************************
-#define AUDIO_BLOCK_SIZE            128    // Fix DMA transfer size at 8ms
-#define AUDIO_BUFFER_NUM_BLOCKS     8      // Must be a power of 2
+#define DSP_FRAME_LENGTH_MS         20
+#define DSP_FRAME_STRIDE_MS         10
+#define DSP_BLOCK_SIZE_MS           250     // Length of audio to process at a time
+#define AUDIO_BLOCK_SIZE_MS         ((DSP_BLOCK_SIZE_MS)/(DSP_FRAME_LENGTH_MS)*(DSP_FRAME_LENGTH_MS) + (DSP_FRAME_LENGTH_MS-DSP_FRAME_STRIDE_MS))
+#define AUDIO_BUFFER_NUM_BLOCKS     1       // Number of DMA blocks to buffer;
+                                            // must be a power of 2
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Other global parameters
 // *****************************************************************************
 // *****************************************************************************
-#define AUDIO_BUFFER_NUM_SAMPLES    ((AUDIO_BUFFER_NUM_BLOCKS)*(CODEC_BUFFER_NUM_SAMPLES))
+#define AUDIO_BLOCK_NUM_SAMPLES     (16*(AUDIO_BLOCK_SIZE_MS))
+#define AUDIO_BUFFER_NUM_SAMPLES    ((AUDIO_BUFFER_NUM_BLOCKS)*(AUDIO_BLOCK_NUM_SAMPLES))
 
 // I2S configured for 16-bit
 #define DRV_I2S_DATA DRV_I2S_DATA16
@@ -53,7 +58,7 @@
 extern "C" {
 #endif /* __cplusplus */
 
-typedef int16_t snsr_data_t;
+typedef float snsr_data_t;
     
 #ifdef	__cplusplus
 }

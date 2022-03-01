@@ -1,0 +1,9 @@
+libedgeimpulse.a
+edge-impulse-sdk
+tflite-model
+model-parameters
+*.X/nbproject/private
+*.X/nbproject/Makefile*
+*.X/build
+*.X/dist
+*.X/.*

@@ -51,11 +51,12 @@
     Application strings and buffers are be defined outside this structure.
 */
 
-static DRV_I2S_DATA _codecBuffer[AUDIO_BLOCK_SIZE] __attribute__ ((aligned (32)));
+// Module level globals
+static DRV_I2S_DATA _codecBuffer[AUDIO_BLOCK_NUM_SAMPLES] __attribute__ ((aligned (16)));
 static DRV_HANDLE drvHandle;
-static snsr_data_t _micBuffer_data[AUDIO_BUFFER_NUM_BLOCKS][AUDIO_BLOCK_SIZE];
+static snsr_data_t _micBuffer_data[AUDIO_BUFFER_NUM_BLOCKS][AUDIO_BLOCK_NUM_SAMPLES];
 
-// Global variables
+// Application global variables
 APP_DATA appData;
 ringbuffer_t micBuffer;
 volatile bool micBuffer_overrun;
@@ -82,7 +83,7 @@ void AudioHandler(DRV_CODEC_BUFFER_EVENT event,
                 micBuffer_overrun = true;
             }
             else {         
-                for (size_t i=0; i < AUDIO_BLOCK_SIZE; i++) {
+                for (size_t i=0; i < AUDIO_BLOCK_NUM_SAMPLES; i++) {
                     *ptr++ = (snsr_data_t) _codecBuffer[i].rightData;
                 }
                 ringbuffer_advance_write_index(&micBuffer, 1);
