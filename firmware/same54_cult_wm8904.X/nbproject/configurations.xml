@@ -247,6 +247,7 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
       <itemPath>../src/ringbuffer.h</itemPath>
+      <itemPath>../src/app_config.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
