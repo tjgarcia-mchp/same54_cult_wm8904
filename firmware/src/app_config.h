@@ -36,15 +36,17 @@
 // Section: User config parameters
 // *****************************************************************************
 // *****************************************************************************
-#define AUDIO_BLOCK_SIZE            128    // Fix DMA transfer size at 8ms
-#define AUDIO_BUFFER_NUM_BLOCKS     8      // Must be a power of 2
+#define AUDIO_BLOCK_SIZE_MS         32
+#define AUDIO_BUFFER_NUM_BLOCKS     1       // Number of DMA blocks to buffer;
+                                            // must be a power of 2
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Other global parameters
 // *****************************************************************************
 // *****************************************************************************
-#define AUDIO_BUFFER_NUM_SAMPLES    ((AUDIO_BUFFER_NUM_BLOCKS)*(CODEC_BUFFER_NUM_SAMPLES))
+#define AUDIO_BLOCK_NUM_SAMPLES     (16*(AUDIO_BLOCK_SIZE_MS))
+#define AUDIO_BUFFER_NUM_SAMPLES    ((AUDIO_BUFFER_NUM_BLOCKS)*(AUDIO_BLOCK_NUM_SAMPLES))
 
 // I2S configured for 16-bit
 #define DRV_I2S_DATA DRV_I2S_DATA16

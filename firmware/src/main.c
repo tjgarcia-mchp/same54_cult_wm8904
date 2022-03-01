@@ -72,14 +72,14 @@ int main ( void )
 
         // sqrt(1/n * sum(x^2))
         float db = 0;
-        for (size_t i=0; i < AUDIO_BLOCK_SIZE; i++) {
+        for (size_t i=0; i < AUDIO_BLOCK_NUM_SAMPLES; i++) {
             float x = (float) ptr[i] / 32768;
             db += x*x;
         }
 
         ringbuffer_advance_read_index(&micBuffer, 1);
 
-        db /= AUDIO_BLOCK_SIZE;
+        db /= AUDIO_BLOCK_NUM_SAMPLES;
         db = 10 * log10(db + 1e-9);
         dbmeter = alpha*dbmeter + (1-alpha)*db;
         int vol = (int) ((90 + db) / 9);
