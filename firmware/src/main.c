@@ -44,6 +44,9 @@
 // *****************************************************************************
 // *****************************************************************************
 
+size_t __attribute__(( unused )) UART_Write(uint8_t *ptr, const size_t nbytes) {
+    return SERCOM1_USART_Write(ptr, nbytes) ? nbytes : 0;
+}
 
 // *****************************************************************************
 // *****************************************************************************
@@ -56,8 +59,8 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     
-    float dbmeter = 0;
-    float alpha = 0.9;
+//    float dbmeter = 0;
+//    float alpha = 0.9;
     while ( appData.state != APP_STATE_FATAL )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
@@ -66,30 +69,36 @@ int main ( void )
         // Retrieve mic buffer
         ringbuffer_size_t rdcnt;
         snsr_data_t const *ptr = ringbuffer_get_read_buffer(&micBuffer, &rdcnt);
-        if (rdcnt == 0) {
-            continue;
+
+//        // sqrt(1/n * sum(x^2))
+//        float db = 0;
+//        for (size_t i=0; i < AUDIO_BLOCK_NUM_SAMPLES; i++) {
+//            float x = (float) ptr[i] / 32768;
+//            db += x*x;
+//        }
+
+        while (rdcnt--) {
+            uint8_t headerbyte = 0xA5U;
+            UART_Write(&headerbyte, 1);
+            UART_Write((uint8_t *) ptr, micBuffer.itemsize);
+            headerbyte = ~headerbyte;
+            UART_Write(&headerbyte, 1);
+
+            ringbuffer_advance_read_index(&micBuffer, 1);
+            ptr += AUDIO_BLOCK_NUM_SAMPLES;
         }
 
-        // sqrt(1/n * sum(x^2))
-        float db = 0;
-        for (size_t i=0; i < AUDIO_BLOCK_NUM_SAMPLES; i++) {
-            float x = (float) ptr[i] / 32768;
-            db += x*x;
-        }
-
-        ringbuffer_advance_read_index(&micBuffer, 1);
-
-        db /= AUDIO_BLOCK_NUM_SAMPLES;
-        db = 10 * log10(db + 1e-9);
-        dbmeter = alpha*dbmeter + (1-alpha)*db;
-        int vol = (int) ((90 + db) / 9);
-
-        printf("%6.2fdB | [", dbmeter);
-        for (int i=0; i < vol; i++)
-            printf("=");
-        for (int i=0; i < 10-vol; i++)
-            printf(" ");
-        printf("]\r");
+//        db /= AUDIO_BLOCK_NUM_SAMPLES;
+//        db = 10 * log10(db + 1e-9);
+//        dbmeter = alpha*dbmeter + (1-alpha)*db;
+//        int vol = (int) ((90 + db) / 9);
+//
+//        printf("%6.2fdB | [", dbmeter);
+//        for (int i=0; i < vol; i++)
+//            printf("=");
+//        for (int i=0; i < 10-vol; i++)
+//            printf(" ");
+//        printf("]\r");
     }
 
     /* Execution should not come here during normal operation */

@@ -884,7 +884,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '2'}
+        attributes: {value: '3'}
   - type: Boolean
     attributes: {id: GCLK_ID_44_CHEN}
     children:
@@ -933,7 +933,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '12000000'}
+        attributes: {id: core, value: '120000000'}
+  - type: KeyValueSet
+    attributes: {id: GCLK_ID_8_GENSEL}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
   - type: Boolean
     attributes: {id: GCLK_ID_9_CHEN}
     children:
@@ -4306,7 +4313,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '12000000'}
+        attributes: {id: core, value: '120000000'}
   - type: Boolean
     attributes: {id: SERCOM1_OTHER_INTERRUPT_ENABLE}
     children:

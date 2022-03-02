@@ -62,7 +62,7 @@ void I2S_Initialize ( void )
                                             I2S_CLKCTRL_FSSEL(1) |
                                             I2S_CLKCTRL_BITDELAY(1) |
                                             I2S_CLKCTRL_NBSLOTS(1) |        // always 2 slots for I2S
-                                            I2S_CLKCTRL_SLOTSIZE(0x1);
+                                            I2S_CLKCTRL_SLOTSIZE(0x3);
 
     // configure clock unit 1
     I2S_REGS->I2S_CLKCTRL[1] =

@@ -31,7 +31,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '1'}
+        attributes: {value: '3'}
   - type: KeyValueSet
     attributes: {id: I2S_RXCTRL_DATASIZE}
     children:

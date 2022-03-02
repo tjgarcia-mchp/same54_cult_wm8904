@@ -37,7 +37,7 @@
 // *****************************************************************************
 // *****************************************************************************
 #define AUDIO_BLOCK_SIZE_MS         32
-#define AUDIO_BUFFER_NUM_BLOCKS     1       // Number of DMA blocks to buffer;
+#define AUDIO_BUFFER_NUM_BLOCKS     8       // Number of DMA blocks to buffer;
                                             // must be a power of 2
 
 // *****************************************************************************
