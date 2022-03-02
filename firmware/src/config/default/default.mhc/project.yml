@@ -90,13 +90,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: 4726AA7DAEC84C4BDE247A3EB5A40A2A
+- generatedChecksum: C1AFF28431E06008086DBCC0E59D91E7
   logicalPath: config/default/peripheral/clock
   name: plib_clock.c
   physicalPath: peripheral/clock
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4726AA7DAEC84C4BDE247A3EB5A40A2A
+  userChecksum: C1AFF28431E06008086DBCC0E59D91E7
 - generatedChecksum: D903E8D9DCBC4107D0AA841E07F653BA
   logicalPath: config/default/peripheral/cmcc
   name: plib_cmcc.c
@@ -118,13 +118,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C3ECDED3D6301DB0DE622293ED615D21
-- generatedChecksum: 3CA2E3ECD3C72E84FBF7F730842767E9
+- generatedChecksum: EE13DCD724F5FDAE85D42BC9A6AEC54B
   logicalPath: config/default/audio/peripheral/i2s
   name: plib_i2s.c
   physicalPath: audio/peripheral/i2s
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3CA2E3ECD3C72E84FBF7F730842767E9
+  userChecksum: EE13DCD724F5FDAE85D42BC9A6AEC54B
 - generatedChecksum: 016522A430A5E7CED403A96FE00D3F87
   logicalPath: config/default/peripheral/nvic
   name: plib_nvic.c
@@ -146,13 +146,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: B2BBE4F0442C18C15B7AC8BF5B8A0548
-- generatedChecksum: 72798CF1D55CBC64C3BD38723B6B9C05
+- generatedChecksum: 6BFA726ACEC4C65FEDC177EB16A2C54A
   logicalPath: config/default/peripheral/sercom/usart
   name: plib_sercom1_usart.c
   physicalPath: peripheral/sercom/usart
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 72798CF1D55CBC64C3BD38723B6B9C05
+  userChecksum: 6BFA726ACEC4C65FEDC177EB16A2C54A
 - generatedChecksum: 269F1FDF3C3F05E4E377C67615F5E8B9
   logicalPath: config/default/peripheral/sercom/i2c_master
   name: plib_sercom6_i2c_master.c

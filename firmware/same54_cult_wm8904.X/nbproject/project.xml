@@ -14,7 +14,6 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>
-                <sourceRootElem>../../../../scratch/wm8904_scratch/pt3/firmware/src</sourceRootElem>
                 <sourceRootElem>../model-parameters</sourceRootElem>
                 <sourceRootElem>../tflite-model</sourceRootElem>
                 <sourceRootElem>../edge-impulse-sdk</sourceRootElem>

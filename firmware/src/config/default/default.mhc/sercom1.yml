@@ -10,7 +10,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: sercom1, value: '54'}
+        attributes: {id: sercom1, value: '255'}
   - type: Integer
     attributes: {id: I2CS_SDASETUP_TIME_NS}
     children:
@@ -42,8 +42,7 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '**** Reference Clock Frequency too low for generating
-            the desired I2C Clock '}
+        - {type: Value, value: '**** Achievable I2C Clock Frequency = 225563Hz'}
   - type: String
     attributes: {id: RECEIVE_DATA_REGISTER}
     children:
@@ -97,7 +96,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: sercom1, value: '5'}
+        attributes: {id: sercom1, value: '59'}
   - type: String
     attributes: {id: TRANSMIT_DATA_REGISTER}
     children:
@@ -106,12 +105,19 @@ children:
       - type: Dynamic
         attributes: {id: sercom1, value: '&(SERCOM1_REGS->USART_INT.SERCOM_DATA)'}
   - type: Integer
+    attributes: {id: USART_BAUD_RATE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '921600'}
+  - type: Integer
     attributes: {id: USART_BAUD_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: sercom1, value: '55469'}
+        attributes: {id: sercom1, value: '57482'}
   - type: KeyValueSet
     attributes: {id: USART_FORM}
     children:
