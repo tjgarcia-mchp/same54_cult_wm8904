@@ -906,7 +906,7 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
@@ -1148,7 +1148,7 @@
         <property key="programoptions.programuserotp" value="false"/>
         <property key="script.has_reset" value="true"/>
         <property key="script.log_level" value="1"/>
-        <property key="script.reset_delay" value="0"/>
+        <property key="script.reset_delay" value="500"/>
         <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
@@ -1755,7 +1755,7 @@
         <property key="reset.type" value="MCLR"/>
         <property key="script.has_reset" value="true"/>
         <property key="script.log_level" value="1"/>
-        <property key="script.reset_delay" value="0"/>
+        <property key="script.reset_delay" value="500"/>
         <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>

@@ -42,11 +42,12 @@
 
 /* Return non-zero on error */
 int8_t ringbuffer_init(ringbuffer_t *ringbuffer, void *buffer, ringbuffer_size_t len, size_t itemsize) {
+    memset(ringbuffer, 0, sizeof(ringbuffer_t));
+    
     /* Check for power of 2 */
     if ( (((len - 1) & len) != 0) || (len > RINGBUFFER_MAX_SIZE) || (buffer == NULL) )
         return 1;
 
-    memset(ringbuffer, 0, sizeof(ringbuffer_t));
     ringbuffer->len = len;
     ringbuffer->itemsize = itemsize;
     ringbuffer->data = buffer;

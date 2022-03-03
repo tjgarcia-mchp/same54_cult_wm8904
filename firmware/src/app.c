@@ -55,7 +55,7 @@ static DRV_I2S_DATA _codecBuffer[AUDIO_BLOCK_NUM_SAMPLES] __attribute__ ((aligne
 static DRV_HANDLE drvHandle;
 static snsr_data_t _micBuffer_data[AUDIO_BUFFER_NUM_BLOCKS][AUDIO_BLOCK_NUM_SAMPLES];
 
-// Application global variables
+// Global variables
 APP_DATA appData;
 ringbuffer_t micBuffer;
 volatile bool micBuffer_overrun;
@@ -77,33 +77,33 @@ void AudioHandler(DRV_CODEC_BUFFER_EVENT event,
         {
             ringbuffer_size_t wrcnt;
             snsr_data_t *ptr = ringbuffer_get_write_buffer(&micBuffer, &wrcnt);
-
+            
             if (wrcnt == 0) {
                 micBuffer_overrun = true;
             }
-            else {
+            else {         
                 for (size_t i=0; i < AUDIO_BLOCK_NUM_SAMPLES; i++) {
                     *ptr++ = (snsr_data_t) _codecBuffer[i].rightData;
                 }
                 ringbuffer_advance_write_index(&micBuffer, 1);
             }
-
+            
             DRV_CODEC_BufferAddRead(drvHandle, &bufferHandle, _codecBuffer, sizeof(_codecBuffer));
             if(bufferHandle == DRV_CODEC_BUFFER_HANDLE_INVALID) {
                 break;
             }
-        }
+        }        
         break;
 
         case DRV_CODEC_BUFFER_EVENT_ABORT:
         {
 
-        }
+        } 
         break;
-
+        
         default:
         {
-
+            
         }
         break;
     }
@@ -135,7 +135,7 @@ void AudioHandler(DRV_CODEC_BUFFER_EVENT event,
  */
 
 void APP_Initialize ( void )
-{
+{    
     /* Place the App state machine in its initial state. */
     appData.state = APP_STATE_INIT;
 
@@ -154,7 +154,7 @@ void APP_Initialize ( void )
  */
 
 void APP_Tasks ( void )
-{
+{    
     /* Check the application's current state. */
     switch ( appData.state )
     {
@@ -162,7 +162,7 @@ void APP_Tasks ( void )
         case APP_STATE_INIT:
         {
             micBuffer_overrun = false;
-
+            
             if (ringbuffer_init(&micBuffer,
                     _micBuffer_data,
                     sizeof(_micBuffer_data) / sizeof(_micBuffer_data[0]),
@@ -177,7 +177,7 @@ void APP_Tasks ( void )
 
             break;
         }
-
+        
         case APP_STATE_OPEN_CODEC:
         {
             SYS_STATUS status;
@@ -185,26 +185,26 @@ void APP_Tasks ( void )
 
             sysHandle = sysObj.drvwm8904Codec0;
             drvHandle = DRV_HANDLE_INVALID;
-
+            
             // Wait for resource
             status = DRV_CODEC_Status(sysHandle);
             if (status != SYS_STATUS_READY) {
                 break;
             }
-
+            
             drvHandle = DRV_CODEC_Open(DRV_WM8904_INDEX_0, DRV_IO_INTENT_READ | DRV_IO_INTENT_EXCLUSIVE);
             if (drvHandle != DRV_HANDLE_INVALID)
             {
-                DRV_CODEC_BufferEventHandlerSet(drvHandle,
-                    (DRV_CODEC_BUFFER_EVENT_HANDLER) AudioHandler,
+                DRV_CODEC_BufferEventHandlerSet(drvHandle, 
+                    (DRV_CODEC_BUFFER_EVENT_HANDLER) AudioHandler, 
                     0);
                 appData.state = APP_STATE_START_CODEC;
             }
             break;
         }
-
+        
         case APP_STATE_START_CODEC:
-        {
+        {                           
             DRV_CODEC_BUFFER_HANDLE bufferHandle;
             DRV_CODEC_BufferAddRead(drvHandle, &bufferHandle, _codecBuffer, sizeof(_codecBuffer));
             if(bufferHandle != DRV_CODEC_BUFFER_HANDLE_INVALID) {
