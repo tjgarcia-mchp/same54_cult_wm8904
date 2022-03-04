@@ -38,8 +38,17 @@
 // *****************************************************************************
 #define DSP_FRAME_LENGTH_MS         20
 #define DSP_FRAME_STRIDE_MS         10
-#define DSP_BLOCK_SIZE_MS           250     // Length of audio to process at a time
-#define AUDIO_BLOCK_SIZE_MS         ((DSP_BLOCK_SIZE_MS)/(DSP_FRAME_LENGTH_MS)*(DSP_FRAME_LENGTH_MS) + (DSP_FRAME_LENGTH_MS-DSP_FRAME_STRIDE_MS))
+#define DSP_BLOCK_STRIDE_MS         250     // (Approximate) Length of audio to 
+                                            // process before making an inference;
+                                            // ideally this should be a factor of 
+                                            // the model's window size
+
+// Calculate the DSP block size s.t. it fits a whole number of strided frames
+#define DSP_FRAME_OVERLAP_MS        (DSP_FRAME_LENGTH_MS-DSP_FRAME_STRIDE_MS)
+#define DSP_BLOCK_SIZE_MS           ((DSP_BLOCK_STRIDE_MS - DSP_FRAME_OVERLAP_MS)/DSP_FRAME_STRIDE_MS*DSP_FRAME_STRIDE_MS + DSP_FRAME_OVERLAP_MS)
+
+// You probably don't need to adjust these
+#define AUDIO_BLOCK_SIZE_MS         DSP_BLOCK_SIZE_MS
 #define AUDIO_BUFFER_NUM_BLOCKS     1       // Number of DMA blocks to buffer;
                                             // must be a power of 2
 
@@ -49,6 +58,7 @@
 // *****************************************************************************
 // *****************************************************************************
 #define AUDIO_BLOCK_NUM_SAMPLES     (16*(AUDIO_BLOCK_SIZE_MS))
+#define DSP_BLOCK_NUM_SAMPLES       (16*(DSP_BLOCK_SIZE_MS))
 #define AUDIO_BUFFER_NUM_SAMPLES    ((AUDIO_BUFFER_NUM_BLOCKS)*(AUDIO_BLOCK_NUM_SAMPLES))
 
 // I2S configured for 16-bit

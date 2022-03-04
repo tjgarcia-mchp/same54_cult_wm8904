@@ -93,7 +93,7 @@ int main ( void )
             continue;
         }
 
-        numpy::signal_from_buffer(ptr, AUDIO_BLOCK_NUM_SAMPLES, &signal);
+        numpy::signal_from_buffer(ptr, DSP_BLOCK_NUM_SAMPLES, &signal);
         
         /* Make inference */
         ei_impulse_result_t result;
