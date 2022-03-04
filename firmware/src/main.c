@@ -30,7 +30,7 @@
 #include "definitions.h"                // SYS function prototypes
 #include "ringbuffer.h"
 #include "app.h"
-
+#include "kb.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Globals
@@ -48,20 +48,40 @@ size_t __attribute__(( unused )) UART_Write(uint8_t *ptr, const size_t nbytes) {
     return SERCOM1_USART_Write(ptr, nbytes) ? nbytes : 0;
 }
 
+void init_model(void)
+{
+    kb_model_init();
+}
+
+/*
+* This function implements inferencing for a single model knowledgepack. Visit
+* the SensiML documentation to learn how to implement more complex models:
+* https://sensiml.com/documentation/knowledge-packs/building-a-knowledge-pack-library.html#calling-knowledge-pack-apis-from-your-code
+*/
+#define KB_MODEL_Parent_INDEX 0
+int run_model(SENSOR_DATA_T *data, int nsensors)
+{
+    int ret;
+
+    ret = kb_run_model((SENSOR_DATA_T *) data, nsensors, KB_MODEL_Parent_INDEX);
+    if (ret >= 0) {
+        kb_reset_model(0);
+    };
+
+    return ret;
+}
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Main Entry Point
 // *****************************************************************************
 // *****************************************************************************
 int main ( void )
-{
-#if BUILD_APPLICATION_TYPE == APPLICATION_TYPE_LEVEL_METER    
-    float dbmeter = 0;
-    float alpha = 0.96; // recursive smoothing constant
-#endif
-    
+{    
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    
+    init_model();
     
     while ( appData.state != APP_STATE_FATAL )
     {
@@ -73,40 +93,13 @@ int main ( void )
         snsr_data_t const *ptr = ringbuffer_get_read_buffer(&micBuffer, &rdcnt);
 
         while (rdcnt--) {
-#if BUILD_APPLICATION_TYPE == APPLICATION_TYPE_DATA_STREAMER
-            uint8_t headerbyte = 0xA5U;
-            UART_Write(&headerbyte, 1);
-            UART_Write((uint8_t *) ptr, micBuffer.itemsize);
-            headerbyte = ~headerbyte;
-            UART_Write(&headerbyte, 1);
-#elif BUILD_APPLICATION_TYPE == APPLICATION_TYPE_LEVEL_METER
-            // Compute RMS level: sqrt(1/n * sum(x^2))
-            float db = 0;
-            
-            // sum(x^2)
+            /* Feed sample into the SensiML API */
             for (size_t i=0; i < AUDIO_BLOCK_NUM_SAMPLES; i++) {
-                float x = (float) ptr[i] / 32768; // Convert 16-bit PCM to [-1,1)
-                db += x*x;
+                int ret = run_model((SENSOR_DATA_T *) ptr++, 1);
+                if (ret >= 0) {
+                    printf("Classification: %d\n", ret);
+                }
             }
-            // 1/n
-            db /= AUDIO_BLOCK_NUM_SAMPLES;
-            
-            // convert to decibel
-            db = 10 * log10(db + 1e-9); // Floor level at -90dB
-            dbmeter = alpha*dbmeter + (1-alpha)*db;
-            
-            // Convert to 1-10 integer volume level
-            int vol = (int) ((90 + db) / 9);
-
-            // e.g.: -60 dB | [===       ]
-            printf("%3.0fdB | [", dbmeter);
-            for (int i=0; i < vol; i++)
-                printf("=");
-            for (int i=0; i < 10-vol; i++)
-                printf(" ");
-            printf("]\r");
-#endif
-            ptr += AUDIO_BLOCK_NUM_SAMPLES;
             ringbuffer_advance_read_index(&micBuffer, 1);
         }
     }

@@ -30,21 +30,12 @@
 // more than once.
 #ifndef APP_CONFIG_H
 #define	APP_CONFIG_H
-// *****************************************************************************
-// *****************************************************************************
-// Section: Build application types
-// *****************************************************************************
-// *****************************************************************************
-#define APPLICATION_TYPE_LEVEL_METER    0
-#define APPLICATION_TYPE_DATA_STREAMER  1
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: User config parameters
 // *****************************************************************************
 // *****************************************************************************
-#define BUILD_APPLICATION_TYPE      APPLICATION_TYPE_DATA_STREAMER
-//#define BUILD_APPLICATION_TYPE      APPLICATION_TYPE_LEVEL_METER
 #define AUDIO_BLOCK_SIZE_MS         16      // Size of DMA block in ms
 #define AUDIO_BUFFER_NUM_BLOCKS     8       // Number of DMA blocks to buffer;
                                             // must be a power of 2

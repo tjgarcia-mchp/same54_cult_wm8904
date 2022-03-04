@@ -115,6 +115,17 @@
           <itemPath>../src/config/default/configuration.h</itemPath>
         </logicalFolder>
       </logicalFolder>
+      <logicalFolder name="knowledgepack"
+                     displayName="knowledgepack"
+                     projectFiles="true">
+        <logicalFolder name="inc" displayName="inc" projectFiles="true">
+          <itemPath>../knowledgepack/inc/kb.h</itemPath>
+          <itemPath>../knowledgepack/inc/kb_defines.h</itemPath>
+          <itemPath>../knowledgepack/inc/kb_typedefs.h</itemPath>
+          <itemPath>../knowledgepack/inc/model_json.h</itemPath>
+          <itemPath>../knowledgepack/inc/testdata.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1" displayName="ATSAME54P20A_DFP" projectFiles="true">
           <logicalFolder name="f1" displayName="component" projectFiles="true">
@@ -380,10 +391,12 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
+      <itemPath>../knowledgepack/model.json</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
+    <Elem>../knowledgepack</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -393,7 +406,7 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>EdbgTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
@@ -407,6 +420,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibFileItem>../libsensiml.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -579,7 +593,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
-        <property key="common-include-directories" value=""/>
+        <property key="common-include-directories" value="..\knowledgepack\inc"/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
         <property key="mdtcm" value=""/>
