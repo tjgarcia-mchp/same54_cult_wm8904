@@ -13,4 +13,5 @@ To add your own edge impulse model:
 3. Open `firmware/src/app_config.h` and modify the `DSP_FRAME_LENGTH_MS` and
    `DSP_FRAME_STRIDE_MS` according to your application.
 
+Note that the UART is running at a baud rate of 921600.
 
